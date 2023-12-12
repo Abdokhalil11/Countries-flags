@@ -1,0 +1,105 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
+.back {
+  width: rem(100);
+  margin: $main-padding;
+  @include d-flex;
+  justify-content: center;
+  height: rem(35);
+  border-radius: rem(2);
+
+  color: var(--text);
+  @include shadow;
+  background-color: var(--parentBackgorund);
+  .arrow {
+    border-color: transparent var(--text) transparent transparent;
+    border-style: solid;
+    border-width: rem(7);
+    position: relative;
+    left: rem(-15);
+    &::before {
+      content: "";
+      position: absolute;
+      left: rem(5);
+      width: rem(10);
+      height: rem(3);
+      background-color: var(--text);
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+}
+.main-content {
+  .currentCountry {
+    @include d-flex;
+    padding: $main-padding;
+    @include responsed(small) {
+      flex-direction: column;
+      text-align: center;
+    }
+    .flag {
+      margin-right: $main-padding;
+      @include responsed(small) {
+        margin-right: 0;
+      }
+      img {
+        max-width: 100%;
+      }
+    }
+    .details {
+      .components {
+        @include d-flex;
+        @include responsed(small) {
+          flex-direction: column;
+        }
+      }
+      .component {
+        .name {
+          font-size: rem(20);
+          font-weight: 800;
+          margin-bottom: rem(20);
+          @include responsed(small) {
+            font-size: rem(15);
+          }
+        }
+        p {
+          margin-bottom: rem(5);
+          font-weight: 600;
+          color: var(--text);
+          @include responsed(small) {
+            font-size: rem(13);
+          }
+          span {
+            color: var(--text);
+            opacity: 0.7;
+            margin-left: rem(5);
+            @include responsed(small) {
+              font-size: rem(12);
+            }
+          }
+        }
+      }
+      .borders {
+        p {
+          color: var(--text);
+          @include responsed(small) {
+            font-size: rem(13);
+          }
+        }
+        span {
+          width: rem(100);
+          height: $main-padding;
+          @include shadow;
+          display: inline-block;
+          background-color: var(--elementBackground);
+          border-radius: rem(3);
+          text-align: center;
+          line-height: $main-padding;
+          margin: rem(5);
+          color: var(--text);
+        }
+      }
+    }
+  }
+}

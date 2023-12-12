@@ -1,0 +1,31 @@
+@use "./variables" as *;
+@mixin d-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin shadow {
+  box-shadow: 0 0 rem(10) var(--shadowColor);
+}
+
+@function rem($px) {
+  @return $px / 16 + rem;
+}
+
+@mixin responsed($screen) {
+  @if ($screen == "small") {
+    @media (max-width: 720px) {
+      @content;
+    }
+  } @else if ($screen == "medium") {
+    @media (min-width: 720px), (max-width: 992px) {
+      @content;
+    }
+  }
+  @if ($screen == "large") {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  }
+}

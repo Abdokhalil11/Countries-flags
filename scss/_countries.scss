@@ -1,0 +1,44 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
+.main-content {
+  .countries {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: rem(20);
+    padding: $main-padding;
+    .country {
+      background-color: var(--elementBackground);
+      border-radius: rem(5);
+      overflow: hidden;
+      @include shadow;
+      @include d-flex;
+      align-items: start;
+      flex-direction: column;
+      .flag {
+        flex: 1;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      .details {
+        p {
+          color: var(--text);
+          font-weight: 600;
+          span { 
+            opacity: .7;
+          }
+        }
+        p.name {
+          font-weight: 800;
+          margin: {
+            bottom: rem(10);
+          }
+        }
+        padding: rem(15);
+      }
+    }
+  }
+}

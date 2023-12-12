@@ -1,0 +1,21 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
+.main-content {
+  .loading {
+    width: rem(59);
+    height: rem(59);
+    background-color: var(elementBackground);
+    border: rem(10) solid var(text);
+    border-bottom: rem(10) solid transparent;
+    border-radius: 50%;
+    margin: rem(20) auto;
+    animation: rotate 2s infinite linear;
+  }
+}
+
+@keyframes rotate {
+  100% {
+    rotate: 1turn;
+  }
+}

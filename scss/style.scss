@@ -1,0 +1,12 @@
+@use "./header" as *;
+@use "./filters" as *;
+@use "./countries" as *;
+@use "./currentCountry" as *;
+@use "./loading" as *;
+
+body,
+#root,
+.main-content {
+  min-height: 100vh;
+  width: 100%;
+}
