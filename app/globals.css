@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --element-background: hsl(0, 0%, 100%);
+  --parent-background: hsl(0, 0%, 98%);
+  --text-color: hsl(200, 15%, 8%);
+  --shadow-color: hsl(0, 0%, 90%);
+}
+
+[theme=dark] {
+  --element-background: hsl(209, 23%, 22%);
+  --parent-background: hsl(207, 26%, 17%);
+  --text-color: hsl(0, 0%, 100%);
+  --shadow-color: #222;
+}
+
+.container {
+  @apply sm:w-[720px] md:w-[970px] lg:w-[1170px] px-[15px] mx-auto;
+}

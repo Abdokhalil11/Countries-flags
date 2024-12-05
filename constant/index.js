@@ -1,0 +1,23 @@
+export const regions = [
+  {
+    name:"All",
+    value:""
+  },
+  {
+    name:"Europe",
+    value:"Europe"
+  },
+  {
+    name:"Africa",
+    value:"Africa"
+  }
+  ,
+  {
+    name:"Asia",
+    value:"Asia"
+  },
+  {
+    name:"Oceania",
+    value:"Oceania"
+  }
+]
